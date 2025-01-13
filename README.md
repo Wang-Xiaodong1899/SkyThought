@@ -31,6 +31,7 @@
 # Getting Started
 
 ```
+git clone --depth 1 https://github.com/Wang-Xiaodong1899/SkyThought.git
 bash install.sh
 bash download.sh YOUR_PATH
 
