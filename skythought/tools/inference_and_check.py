@@ -306,11 +306,12 @@ def main():
     # create result dir if not exists
     if args.result_dir and not os.path.exists(args.result_dir):
         os.makedirs(args.result_dir)
-    result_file = os.path.join(args.result_dir, f"{MODEL_TO_NAME[args.model]}_{args.dataset}_{args.split}_{args.source}_{args.start}_{args.end}.json")
+    model_name = os.path.basename(args.model)
+    result_file = os.path.join(args.result_dir, f"{model_name}_{args.dataset}_{args.split}_{args.source}_{args.start}_{args.end}.json")
 
     if args.check:
         # check if converted file exists
-        converted_file = f"{args.result_dir}/converted_{MODEL_TO_NAME[args.model]}_{args.dataset}_{args.split}_{args.source}_{args.start}_{args.end}.json"
+        converted_file = f"{args.result_dir}/converted_{model_name}_{args.dataset}_{args.split}_{args.source}_{args.start}_{args.end}.json"
         if os.path.exists(converted_file):
             result_file = converted_file
         perform_check(handler, temperatures, result_file, args)
