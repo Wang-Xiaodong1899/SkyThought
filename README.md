@@ -30,6 +30,15 @@
 
 # Getting Started
 
+```
+bash install.sh
+bash download.sh YOUR_PATH
+
+```
+
+
+
+
 We open source the code and scripts we used for data curation, training, and evaluation for Sky-T1-32B-Preview, you can find more details in each directory.
 - ``/data``: The 17k training data used to train Sky-T1-32B-Preview. We also add the science and riddle portion from the [STILL-2 model](https://arxiv.org/pdf/2412.09413).
 - ``skythought/tools``: Training data curation and evaluation for Sky-T1. To generate our training data, we use the QwQ-32B-Preview model. We curate the data mixture to cover diverse domains that require reasoning, and a reject sampling procedure to improve the data quality.
