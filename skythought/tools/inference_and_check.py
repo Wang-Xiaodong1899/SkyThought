@@ -318,12 +318,12 @@ def main():
         return
     elif args.inference:
         llm = OpenAI() if args.model.startswith("openai") else LLM(model=args.model, tensor_parallel_size=args.tp)
-        system_prompt = SYSTEM_PROMPT[args.model]
+        system_prompt = SYSTEM_PROMPT["NovaSky-AI/Sky-T1-32B-Preview"]
         perform_inference_and_save(handler, temperatures, max_tokens, result_file, llm, system_prompt, args)
         return
 
     llm = OpenAI() if args.model.startswith("openai") else LLM(model=args.model, tensor_parallel_size=args.tp)
-    system_prompt = SYSTEM_PROMPT[args.model]
+    system_prompt = SYSTEM_PROMPT["NovaSky-AI/Sky-T1-32B-Preview"]
     perform_inference_and_check(handler, temperatures, max_tokens, result_file, llm, system_prompt, args)
 
 if __name__ == "__main__":
